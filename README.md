@@ -1,20 +1,21 @@
-# Parallel Particle Swarm Optimization (PSO) with MPI 🧬
+# Parallel Genetic Algorithm (GA) with Pthreads 🧬
 
-This repository contains a high-performance implementation of the **Particle Swarm Optimization (PSO)** algorithm, developed in **C**. It includes both a serial version and a parallel version utilizing **MPI** (Message Passing Interface) for distributed computing.
+A robust implementation of a **Genetic Algorithm** developed in **C**, featuring a multi-threaded approach using the **POSIX Threads (pthreads)** library to optimize fitness evaluation and selection processes.
 
-##  Overview
-Particle Swarm Optimization is a computational method that optimizes a problem by iteratively trying to improve a candidate solution with regard to a given measure of quality. This project focuses on the parallelization of the swarm's movement and fitness evaluation to achieve significant speedups in optimization tasks.
+##  Key Features
+* **Multi-threaded Execution:** Configured to run with **8 concurrent threads** to maximize CPU utilization.
+* **Scalable Architecture:** Designed to handle complex fitness functions with reduced execution time.
+* **Performance Comparison:** Includes both serial (`ag.c`) and parallel (`agparalelo.c`) versions for benchmarking.
 
 ##  Technical Stack
 * **Language:** C
-* **Parallel Framework:** MPI (Message Passing Interface)
-* **Mathematical Tools:** MT (Mersenne Twister) for high-quality statistical procedures.
+* **Concurrency:** POSIX Threads (pthreads)
+* **Optimization:** Genetic operators (Selection, Crossover, Mutation).
 
-## 📁 Repository Structure
-* `swarmOp.c`: Serial implementation of the PSO algorithm.
-* `swarmOp_paralelo_MPI_PSO.c`: Parallel implementation optimized for distributed memory systems.
-* `alea.h`: Header for random number generation and MPI support.
-* `mt.h`: Header for statistical and mathematical procedures.
+## 📁 File Descriptions
+* `agparalelo.c`: The core parallel implementation utilizing 8 threads.
+* `ag.c`: The standard serial version of the Genetic Algorithm.
+* `mt.h` & `alea.h`: Libraries for statistical procedures and random population generation.
 
-##  Academic Context
-This project was developed as part of the **Artificial Intelligence Engineering** curriculum at the **Instituto Tecnológico de La Paz**, focusing on advanced optimization techniques and parallel architectures.
+##  Results
+The parallel version achieves a significant reduction in computational time compared to the serial approach, demonstrating the efficiency of shared-memory parallelism in evolutionary computation.
